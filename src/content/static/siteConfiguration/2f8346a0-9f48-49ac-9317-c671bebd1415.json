@@ -1,0 +1,16 @@
+{
+  "id": "2f8346a0-9f48-49ac-9317-c671bebd1415",
+  "type": "SiteConfiguration",
+  "siteSettings": {
+    "name": "Jacob Carpenter",
+    "role": "Full Stack Engineer",
+    "avatarImageSrc": "/ProfilePic.png",
+    "siteSource": "https://github.com/jacob-carpenter/wip",
+    "routeConfigurationId": "685a5bf1-2e14-4035-99bc-fb1720f6b743",
+    "socialMediaLinks": {
+      "linkedIn": "https://www.linkedin.com/in/jacob-carpenter-718769b3/",
+      "twitter": "https://twitter.com/jacobca22629800",
+      "github": "https://github.com/jacob-carpenter"
+    }
+  }
+}

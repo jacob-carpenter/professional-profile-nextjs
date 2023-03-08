@@ -1,0 +1,50 @@
+{
+  "id": "685a5bf1-2e14-4035-99bc-fb1720f6b743",
+  "type": "RouteConfiguration",
+  "routes": [
+    {
+      "path": "about",
+      "title": "About Me",
+      "icon": "User",
+      "sideBarDisplaySettings": {
+        "showInMobile": true,
+        "show": true
+      },
+      "documentConfigurationId": "7f113c07-36e4-4c15-852d-21943ebfe54e",
+      "children": [
+        {
+          "isHomePage": true,
+          "path": "resume",
+          "title": "Resume",
+          "icon": "Document",
+          "navigationBarDisplaySettings": {
+            "show": true
+          },
+          "sideBarDisplaySettings": {
+            "showInMobile": true,
+            "show": true
+          },
+          "documentConfigurationId": "dcfea758-826f-4b2e-8cb3-9116e76b3d8e"
+        },
+        {
+          "path": "projects",
+          "title": "Personal Work",
+          "icon": "Work",
+          "navigationBarDisplaySettings": {
+            "show": true
+          },
+          "sideBarDisplaySettings": {
+            "showInMobile": true,
+            "show": true
+          },
+          "documentConfigurationId": "754cfe8d-e649-4aef-a76d-8a70e2274f2a"
+        }
+      ]
+    },
+    {
+      "path": "playground",
+      "title": "Project Playground",
+      "icon": "Game"
+    }
+  ]
+}

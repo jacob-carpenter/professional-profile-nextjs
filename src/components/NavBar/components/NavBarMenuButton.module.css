@@ -1,0 +1,46 @@
+.mobileNavigationContainer {
+  position: fixed;
+  top: calc(63px + 14px);
+  z-index: 1001;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 0;
+  will-change: height;
+  transition: height 0.5s ease;
+  overflow: hidden;
+  user-select: none;
+}
+.mobileNavigationWrapper {
+  display: none;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  background: var(--nextui-colors-background);
+}
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .mobileNavigationWrapper {
+    background: var(--nextui-colors-menuBackground);
+    backdrop-filter: saturate(180%) blur(60px);
+    --webkit-backdrop-filter: saturate(180%) blur(34px);
+  }
+  .mobileNavigationContainer.isDark {
+    backdrop-filter: saturate(180%) blur(24px);
+    --webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+}
+.mobileNavigationContainer.opened {
+  height: calc(100vh - 64px);
+}
+.mobileNavigationContainer.opened .mobileNavigationWrapper {
+  display: block;
+  padding-top: 16px;
+  background: rgba(230, 230, 230, 0.95);
+}
+.mobileNavigationContainer.isDark .mobileNavigationWrapper {
+  background: rgba(60, 60, 60, 0.95);
+}

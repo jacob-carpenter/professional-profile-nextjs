@@ -1,0 +1,59 @@
+{
+  "id": "754cfe8d-e649-4aef-a76d-8a70e2274f2a",
+  "type": "DocumentConfiguration",
+  "document": {
+    "sections": [
+      {
+        "id": "58d493d5-b043-45f2-8835-da5766e4ce49",
+        "type": "Card",
+        "header": "Personal Website",
+        "body": "",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "mug-saucer",
+        "xs": 12,
+        "externalLinks": [],
+        "details": [
+          "<li>Configuration driven resume site written in NextJS and leveraging NextUI.</li>"
+        ]
+      },
+      {
+        "id": "80d02097-d30f-4c06-bcc2-40dc9c07953e",
+        "type": "Card",
+        "header": "Data extractor",
+        "body": "",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "briefcase",
+        "xs": 12,
+        "externalLinks": [
+          "https://github.com/jacob-carpenter/RIP/tree/main/data_extractors"
+        ],
+        "details": [
+          "<li>Data extractors that would run as a background service and pull stock/crypto historical data.</li>",
+          "<li>Would store extracted data in a Microsoft SQL Server instance.</li>"
+        ]
+      },
+      {
+        "id": "80d02097-d30f-4c06-bcc2-40dc9c07953e",
+        "type": "Card",
+        "header": "Social Media and General Proximity Chat Website",
+        "body": "",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "briefcase",
+        "xs": 12,
+        "externalLinks": [
+          "https://github.com/jacob-carpenter/RIP/tree/main/old_frienbly_ngx",
+          "https://github.com/jacob-carpenter/RIP/tree/main/old_frienbly_web"
+        ],
+        "details": [
+          "<li>Front end built in Angular UI and Typescript.</li>",
+          "<li>Backend java server to save and serve content out of a mysql instance.</li>",
+          "<li>Used websockets for direct communication between users.</li>",
+          "<li>Supported email verification of new users.</li>"
+        ]
+      }
+    ]
+  }
+}

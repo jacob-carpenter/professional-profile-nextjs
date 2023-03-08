@@ -1,0 +1,335 @@
+{
+  "id": "dcfea758-826f-4b2e-8cb3-9116e76b3d8e",
+  "type": "DocumentConfiguration",
+  "document": {
+    "sections": [
+      {
+        "id": "58d493d5-b043-45f2-8835-da5766e4ce49",
+        "type": "Card",
+        "header": "Summary",
+        "body": "Result driven full stack software engineer with experience seeking to work in a challenging project space requiring creative thinking, leadership, and problem solving skills.",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "mug-saucer",
+        "xs": 12,
+        "md": 6,
+        "details": ["<li>Willing to learn any tech stack and language.</li>"]
+      },
+      {
+        "id": "80d02097-d30f-4c06-bcc2-40dc9c07953e",
+        "type": "Card",
+        "header": "Software Engineer 3 at Casebook PBC",
+        "body": "Working remotely out of Lee's Summit, Missouri.",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "briefcase",
+        "xs": 12,
+        "md": 6
+      },
+      {
+        "id": "beea2620-cff1-42cd-937f-a0136f500326",
+        "type": "Divider",
+        "header": "Skills",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "keyboard"
+      },
+      {
+        "id": "2b785234-1081-4daf-9339-a773d26007ea",
+        "type": "ParentEntity",
+        "children": [
+          {
+            "id": "de6fc5f4-8ae3-4b34-bcc4-62708c06587b",
+            "type": "Card",
+            "header": "Javascript",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "square-js"
+          },
+          {
+            "id": "1bdbd2b4-8e93-454f-9311-34ac75aa26c2",
+            "type": "Card",
+            "header": "Typescript",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "node-js"
+          },
+          {
+            "id": "6a93ff2f-ca7a-4d96-a6dc-ee8595492518",
+            "type": "Card",
+            "header": "NodeJS",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "node-js"
+          },
+          {
+            "id": "dc1b683b-f6b8-4f55-9f64-b54b9931e28c",
+            "type": "Card",
+            "header": "React",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "react"
+          },
+          {
+            "id": "59e0c90d-da62-4b2f-8d21-8aff2bf1380e",
+            "type": "Card",
+            "header": "Angular",
+            "tooltip": "Out of date. Last time professional work was done in this space was at Service Management Group.",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "angular"
+          },
+          {
+            "id": "55097a3c-1ae8-48f2-9478-997417d14340",
+            "type": "Card",
+            "header": "NextJS",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "node-js"
+          },
+          {
+            "id": "cd6ba1c8-511f-4cc9-8a03-4040f299828b",
+            "type": "Card",
+            "header": "SQL",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fas",
+            "iconType": "fontawesome",
+            "icon": "database"
+          },
+          {
+            "id": "698c03b4-f88c-4ae5-aed9-857baf256213",
+            "type": "Card",
+            "header": "GraphQL",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fas",
+            "iconType": "fontawesome",
+            "icon": "database"
+          },
+          {
+            "id": "f21b4682-994d-45f5-b4be-dac445a84179",
+            "type": "Card",
+            "header": "Java",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "java"
+          },
+          {
+            "id": "78292510-9a6c-4fd8-9334-553f2e5996fb",
+            "type": "Card",
+            "header": "C#",
+            "tooltip": "Out of date. Last time professional work was done in this space was at Service Management Group.",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "windows"
+          },
+          {
+            "id": "78f89eb9-0561-4f78-aaf3-ac350a9afa65",
+            "type": "Card",
+            "header": "Azure",
+            "tooltip": "Out of date. Last time professional work was done in this space was at Service Management Group.",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "windows"
+          },
+          {
+            "id": "e586cbd2-0074-4ece-8288-85ea1e52ed2a",
+            "type": "Card",
+            "header": "GitLab",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "gitlab"
+          },
+          {
+            "id": "c11be3fe-3d09-4683-8230-ccb63740c3a1",
+            "type": "Card",
+            "header": "Jenkins",
+            "tooltip": "Out of date. Last time professional work was done in this space was at Cerner Corporation.",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "jenkins"
+          },
+          {
+            "id": "c674a0b1-a59a-41fb-b90a-6c50e1a2b2a0",
+            "type": "Card",
+            "header": "AWS",
+            "xs": 6,
+            "sm": 4,
+            "md": 2,
+            "iconPrefix": "fab",
+            "iconType": "fontawesome",
+            "icon": "aws"
+          }
+        ],
+        "indent": true
+      },
+      {
+        "id": "80194b5f-e342-4fce-8772-1fac816e2ee8",
+        "type": "Divider",
+        "header": "Experience",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "history"
+      },
+      {
+        "id": "5d92bad9-5e38-46ed-86c3-d6493864536f",
+        "type": "HistoryCard",
+        "header": "Casebook PBC",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "person-shelter",
+        "events": [
+          {
+            "startDate": "2021-04-01",
+            "endDate": "PRESENT",
+            "header": "Software Engineer 3"
+          }
+        ],
+        "details": [
+          "<li>Enhanced our platform to support an LDAP 2 SSO login mechanism, which included integrating AWS Cognito configurations to our APIs and creating a Lambda to add new user contexts to our system.</li>",
+          "<li>Managed an upgrade of all of our front end and middle-ware libraries, which included contributing a bug fix to the open source graphql-tools project.</li>",
+          "<li>Functioned in a full stack capacity. Worked on the front end applications in react + typescript, the middleware in typescript + graphql, and the backend in Java + CRNK.</li>",
+          "<li>Created a front end mono-repo library to help manage shared code across our business apps.</li>",
+          "<li>Enhanced our service management system to support multi-resource linking service deliveries.</li>"
+        ],
+        "indent": true
+      },
+      {
+        "id": "d280bb02-a83f-4732-a7bc-545e14ccb520",
+        "type": "HistoryCard",
+        "header": "Service Management Group",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "utensils",
+        "events": [
+          {
+            "startDate": "2019-06-01",
+            "endDate": "2021-04-01",
+            "header": "Technical Team Lead"
+          },
+          {
+            "startDate": "2017-08-01",
+            "endDate": "2019-06-01",
+            "header": "Sr. Software Engineer"
+          },
+          {
+            "startDate": "2016-07-01",
+            "endDate": "2017-08-01",
+            "header": "Software Engineer"
+          }
+        ],
+        "details": [
+          "<li>Led a 6 engineer team to productionalize the multi-platform multi-data source reporting platform.</li>",
+          "<li>Wrote a configuration based data aggregation engine which would aggregate data in a reporting optimized way in SQLServer based on cron-like intervals.</li>",
+          "<li>Developed our identity service implementation leveraging IdentityServer3 and OAuth2.</li>",
+          "<li>Supported a cross-system single sign on integration that would allow clients to access both our old and new reporting platforms seamlessly.</li>",
+          "<li>Migrated our deprecated apache-storm streaming pipelines into apache-spark and Scala.</li>",
+          "<li>Managed real-time data streaming pipelines using apache-storm and kafka written in Java.</li>",
+          "<li>Worked and help build an initial beta of a multi-platform multi-data source reporting platform built in C#.</li>"
+        ],
+        "indent": true
+      },
+      {
+        "id": "4c5c687b-8372-4c31-b369-45d3c591675d",
+        "type": "HistoryCard",
+        "header": "Cerner Corporation",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "laptop-medical",
+        "events": [
+          {
+            "startDate": "2015-08-01",
+            "endDate": "2016-06-01",
+            "header": "Sr. Software Engineer"
+          },
+          {
+            "startDate": "2011-11-01",
+            "endDate": "2015-08-01",
+            "header": "Software Engineer"
+          },
+          {
+            "startDate": "2011-06-01",
+            "endDate": "2011-08-14",
+            "header": "Software Engineer Intern"
+          }
+        ],
+        "details": [
+          "<li>Worked on a reporting platform to provide clients the capability to report on larger population centric data sets leveraging HP Vertica.</li>",
+          "<li>Helped create and maintain the Single Sign On integration from our authentication system to the SAP Business Objects and Tableau authentication systems.</li>",
+          "<li>Managed our larger scale data processing pipelines which would load to Vertica via Apache crunch.</li>",
+          "<li>Managed a portion of our automated deployments via maintaining Chef cookbooks and vaults.</li>",
+          "<li>Enhanced our on metadata APIs that were built in Ruby on Rails.</li>",
+          "<li>Worked on an OSGi Java Application that provided setup wizards to support hospital system configuration.</li>",
+          "<li>Designed new schemata to support setting up new system concepts that could be configured via the setup tools.</li>",
+          "<li>Leveraged a proprietary sql-based scripting language 'ccl'.</li>"
+        ],
+        "indent": true
+      },
+      {
+        "id": "89464383-a3a9-4fce-aead-9571f886a1e8",
+        "type": "Divider",
+        "header": "Education",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "school"
+      },
+      {
+        "id": "1f2e4dcb-1a18-4ab8-97e9-7b0087ab6a41",
+        "type": "HistoryCard",
+        "header": "University of Missouri-Columbia",
+        "iconPrefix": "fas",
+        "iconType": "fontawesome",
+        "icon": "user-graduate",
+        "events": [
+          {
+            "startDate": "2008-08-14",
+            "endDate": "2011-12-16",
+            "header": "Bachelor of Science - Computer Science"
+          }
+        ],
+        "details": [
+          "<li>3.51 GPA</li>",
+          "<li>Mathematics Minor</li>",
+          "<li>Program focused on C and Java</li>"
+        ],
+        "indent": true
+      }
+    ]
+  }
+}
