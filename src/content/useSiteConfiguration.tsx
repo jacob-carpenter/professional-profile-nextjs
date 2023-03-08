@@ -6,7 +6,8 @@ const SiteConfigurationContext = createContext<SiteConfiguration | undefined>(
   undefined
 );
 
-export const SiteConfigurationContextProvider = ({ children, _siteId }) => {
+// eslint-disable-next-line unused-imports/no-unused-vars
+export const SiteConfigurationContextProvider = ({ children, siteId }) => {
   // TODO load by id from api
   const siteConfiguration = jacobStaticSiteConfig;
 
