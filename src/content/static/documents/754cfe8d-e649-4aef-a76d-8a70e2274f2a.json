@@ -12,7 +12,9 @@
         "iconType": "fontawesome",
         "icon": "mug-saucer",
         "xs": 12,
-        "externalLinks": [],
+        "externalLinks": [
+          "https://github.com/jacob-carpenter/professional-profile-nextjs"
+        ],
         "details": [
           "<li>Configuration driven resume site written in NextJS and leveraging NextUI.</li>"
         ]
