@@ -1,0 +1,21 @@
+.baseSideBar {
+    padding-top: 24px;
+    left: -24px;
+    position: relative;
+}
+.baseSideBar.isMobile {
+    padding: 0px 0px 0px 24px;
+}
+.baseSideBar.fullResolution {
+    padding: 24px 0px 0px 32px;
+    border-right-style: solid;
+    border-width: thin;
+    width: 100%;
+    height: 100%;
+    border-right-color: rgb(210, 210, 210);
+    background: rgb(220, 220, 220);
+}
+.baseSideBar.fullResolution.isDark {
+    border-right-color: rgb(90, 90, 90);
+    background: rgb(20, 20, 20);
+}
