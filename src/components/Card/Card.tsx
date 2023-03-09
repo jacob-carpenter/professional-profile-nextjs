@@ -13,7 +13,7 @@ const CardComponent = (
   const { body, children, details } = props;
   return (
     <>
-      <NextUICard isHoverable>
+      <NextUICard>
         <CardHeader {...props} />
         {body || children ? (
           <>

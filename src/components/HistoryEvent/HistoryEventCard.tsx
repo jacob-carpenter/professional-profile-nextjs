@@ -2,9 +2,7 @@ import { Card as NextUICard, Grid } from "@nextui-org/react";
 import { memo } from "react";
 import { HistoryEventCardHeader } from "./HistoryEventCardHeader";
 import { v4 } from "uuid";
-import {
-  HistoryEvent,
-} from "../../models/Document";
+import { HistoryEvent } from "../../models/Document";
 import dompurify from "dompurify";
 
 const PRESENT_DATE_REGEX = /present/i;
@@ -31,7 +29,7 @@ const HistoryEventCardComponent = (historyEvent: HistoryEvent) => {
   const { details } = historyEvent;
   return (
     <>
-      <NextUICard isHoverable>
+      <NextUICard>
         <HistoryEventCardHeader
           {...historyEvent}
           headerSuffix={

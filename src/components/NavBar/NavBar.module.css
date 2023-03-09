@@ -2,5 +2,5 @@
   background: rgb(200, 200, 200);
 }
 .navigationBarContainer.isDark {
-  background: rgb(100, 100, 100);
+  background: rgba(100, 100, 100);
 }
