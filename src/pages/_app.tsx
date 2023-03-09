@@ -1,4 +1,4 @@
-import { createTheme, NextUIProvider } from "@nextui-org/react";
+import { Container, createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { NavBar } from "../components/NavBar/NavBar";
 import { PageContainer } from "../components/PageContainer/PageContainer";
@@ -74,8 +74,17 @@ const Application = ({ Component, pageProps }) => {
             siteId={"2f8346a0-9f48-49ac-9317-c671bebd1415"}
           >
             <ApplicationContent>
-              <NavBar />
-              <PageContainer>{<Component {...pageProps} />}</PageContainer>
+              <Container
+                css={{
+                  display: "grid",
+                  padding: "0",
+                  margin: "0",
+                  maxWidth: "100%",
+                }}
+              >
+                <NavBar />
+                <PageContainer>{<Component {...pageProps} />}</PageContainer>
+              </Container>
             </ApplicationContent>
           </SiteConfigurationContextProvider>
         </NextUIProvider>

@@ -16,12 +16,15 @@ const SocialMediaLinksComponent = ({
       {Object.entries(socialMediaLinks)
         .filter((_entry, index) => (isMobile && index <= 2) || !isMobile)
         .map((entry, index, entries) => {
+          const isLastEntry = index + 1 === entries.length;
+          const paddingRight = isMobile ? "8px" : "24px";
           return (
-            <SocialMediaLink
+            <span
               key={v4()}
-              href={entry[1]}
-              gutterRight={index + 1 !== entries.length}
-            />
+              style={{ paddingRight: !isLastEntry ? paddingRight : "" }}
+            >
+              <SocialMediaLink href={entry[1]} />
+            </span>
           );
         })}
     </>

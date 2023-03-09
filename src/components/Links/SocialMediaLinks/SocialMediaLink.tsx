@@ -16,7 +16,7 @@ const twitterRegex =
 
 interface SocialMediaLinkComponentProps {
   href: string;
-  gutterRight: boolean;
+  gutterRight?: boolean;
 }
 
 export const getLinkInfo = (link: string) => {
@@ -39,7 +39,7 @@ export const getLinkInfo = (link: string) => {
 
 const SocialMediaLinkComponent = ({
   href,
-  gutterRight,
+  gutterRight = false,
 }: SocialMediaLinkComponentProps) => {
   const linkInfo = getLinkInfo(href);
 

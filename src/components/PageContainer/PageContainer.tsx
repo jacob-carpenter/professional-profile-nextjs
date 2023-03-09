@@ -16,10 +16,13 @@ const PageContainerComponent = ({ children }: PageContainerProps) => {
       as="main"
       css={{
         position: "relative",
-        padding: "0px",
         paddingBottom: "36px",
         backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
         minHeight: "calc(100vh - 76px)",
+        paddingLeft: "0px",
+        paddingRight: "0px",
+        margin: "0",
+        maxWidth: "100%",
       }}
       display="flex"
       id="main-container"
