@@ -1,6 +1,7 @@
 import { Container, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { memo } from "react";
+import { LoadingPage } from "../../components/LoadingPage/LoadingPage";
 import { useRoutes } from "../../content/useRoutes";
 import { flattenRoutes } from "../../utils/routeUtilities";
 
@@ -14,11 +15,7 @@ const HomePageComponent = () => {
 
   if (foundHome) router.push(foundHome.path);
 
-  return (
-    <Container fluid>
-      <Text>No home route was bound...</Text>
-    </Container>
-  );
+  return <LoadingPage />;
 };
 
 const HomePageComponentMemo = memo(HomePageComponent);
