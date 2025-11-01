@@ -16,10 +16,10 @@ const SiteBrandComponent = () => {
         isBordered
       />
       <div className="flex flex-col p-2">
-        <h3 className="font-bold text-lg relative top-3">
+        <h3 className="font-bold text-lg relative top-1">
           {siteTitle}
         </h3>
-        <p className="text-sm pl-10 relative -top-1">
+        <p className="text-sm pl-10 relative">
           {role}
         </p>
       </div>

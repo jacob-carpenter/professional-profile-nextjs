@@ -3,6 +3,7 @@ import { withDefaults } from "../../utils/withDefaults";
 import { Fixed } from "../Fixed/Fixed";
 import { SideBar } from "../SideBar/SideBar";
 import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
+import { useMobile, useResponsive } from "../../utils/useMobile";
 
 export interface PageContainerProps {
   children: React.ReactNode;
@@ -10,6 +11,11 @@ export interface PageContainerProps {
 
 const PageContainerComponent = ({ children }: PageContainerProps) => {
   const isDark = useIsDarkTheme();
+  const { columnMaxSpan: maxSpan } = useResponsive();
+  const columnMaxSpan = maxSpan * 2; // Using double the span for more columns
+  
+  const isMobile = useMobile();
+  const sideBarSpan = isMobile ? 0 : Math.max(Math.floor(columnMaxSpan / 4), 2);
   return (
     <main
       id="main-container"
@@ -18,32 +24,30 @@ const PageContainerComponent = ({ children }: PageContainerProps) => {
         backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
       }}
     >
-      <div className="flex w-full p-0 md:pt-4 gap-0">
-        <div className="hidden sm:block sm:w-[32%] md:w-[18%] xl:w-[14%]">
+      <div className={`flex w-full p-0 md:pt-4 gap-0 grid grid-cols-${columnMaxSpan}`}>
+        {!isMobile && (
+        <div >
           <Fixed
+          className={`col-span-${sideBarSpan}`}
             css={{
               maxHeight: "calc(100vh - 4rem)",
               overflow: "auto",
+              display: "block",
               zIndex: "$2",
               pb: "$28",
               "&::-webkit-scrollbar": {
                 width: "0px",
               },
               height: "100%",
-              padding: "0px",
-              "@md": {
-                width: "19%",
-              },
-              "@xl": {
-                width: "14%",
-              },
+              padding: "0px"
             }}
-            offset={76}
+            offset={64}
           >
             <SideBar />
           </Fixed>
-        </div>
-        <div className="max-w-full min-h-full overflow-auto mt-9 p-0 sm:pl-6 xl:pl-9 flex-1">
+        </div>)
+        }
+        <div className={`max-w-full min-h-full overflow-auto mt-4 pl-6 col-span-${columnMaxSpan - sideBarSpan}`}>
           {children}
         </div>
       </div>

@@ -19,11 +19,8 @@
       "name": "Build & Run Prod",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "powershell",
-      "runtimeArgs": [
-        "-Command",
-        "npm run build; if ($?) { npm run start }"
-      ],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:prod"],
       "console": "integratedTerminal",
       "serverReadyAction": {
         "pattern": "- Local:.+(https?://\\S+)",

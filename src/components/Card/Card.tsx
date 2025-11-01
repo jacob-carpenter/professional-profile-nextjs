@@ -13,7 +13,7 @@ const CardComponent = (
   const { body, children, details } = props;
   return (
     <>
-      <HeroUICard>
+      <HeroUICard >
         <CardHeader {...props} />
         {body || children ? (
           <>
