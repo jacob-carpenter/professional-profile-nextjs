@@ -1,5 +1,5 @@
 import { useTheme as useNextTheme } from "next-themes";
-import { Navbar, Switch, useTheme } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link as NavbarLink, Switch } from "@heroui/react";
 import { MoonIcon } from "../Icons/MoonIcon";
 import { SunIcon } from "../Icons/SunIcon";
 import { useRoutes } from "../../content/useRoutes";
@@ -17,8 +17,8 @@ import { withDefaults } from "../../utils/withDefaults";
 import { SocialMediaLinks } from "../Links/SocialMediaLinks/SocialMediaLinks";
 
 const NavBarComponent = () => {
-  const { setTheme } = useNextTheme();
-  const { isDark } = useTheme();
+  const { setTheme, theme } = useNextTheme();
+  const isDark = theme === "dark";
   const router = useRouter();
 
   const { siteSettings } = useSiteConfiguration();
@@ -33,21 +33,19 @@ const NavBarComponent = () => {
   return (
     <Navbar
       isBordered
-      variant="sticky"
+      position="sticky"
       className={clsx({
         [styles.navigationBarContainer]: true,
         [styles.isDark]: isDark,
       })}
-      containerCss={{
-        minWidth: "100%",
-        paddingLeft: "8px",
-        paddingRight: "8px",
+      classNames={{
+        wrapper: "min-w-full px-2",
       }}
     >
-      <Navbar.Brand>
+      <NavbarBrand>
         <SiteBrand />
-      </Navbar.Brand>
-      <Navbar.Content hideIn="xs" activeColor="secondary" variant="underline">
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {flattenedRoutes
           .filter((route) =>
             isMobile
@@ -59,43 +57,43 @@ const NavBarComponent = () => {
             const { title } = route;
             let link = (route as LinkModel).link;
             let path = (route as Page).path;
+            const isActive = isRouteSelected(route, router.asPath || '');
             return (
-              <Navbar.Link
-                key={link || `/${path}`}
-                isExternal={!!link}
-                href={link || `/${path}`}
-                isActive={isRouteSelected(route, router.asPath)}
-              >
-                {title}
-              </Navbar.Link>
+              <NavbarItem key={link || `/${path}`} isActive={isActive}>
+                <NavbarLink
+                  isExternal={!!link}
+                  href={link || `/${path}`}
+                >
+                  {title}
+                </NavbarLink>
+              </NavbarItem>
             );
           })}
-      </Navbar.Content>
-      <Navbar.Content
-        css={{
+      </NavbarContent>
+      <NavbarContent
+        justify="end"
+        style={{
           gap: isMobile ? "10px" : undefined,
         }}
       >
         {Object.keys(socialMediaLinks).length ? (
-          <Navbar.Item>
+          <NavbarItem>
             <SocialMediaLinks socialMediaLinks={socialMediaLinks} />
-          </Navbar.Item>
+          </NavbarItem>
         ) : undefined}
-        <Navbar.Item>
+        <NavbarItem>
           <Switch
-            squared
-            checked={isDark}
-            onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
-            iconOn={<MoonIcon filled />}
-            iconOff={<SunIcon filled />}
+            isSelected={isDark}
+            onValueChange={(checked) => setTheme(checked ? "dark" : "light")}
+            thumbIcon={isDark ? <MoonIcon filled /> : <SunIcon filled />}
           />
-        </Navbar.Item>
+        </NavbarItem>
         {isMobile ? (
-          <Navbar.Item>
+          <NavbarItem>
             <NavBarMenuButton />
-          </Navbar.Item>
+          </NavbarItem>
         ) : undefined}
-      </Navbar.Content>
+      </NavbarContent>
     </Navbar>
   );
 };

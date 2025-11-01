@@ -1,4 +1,4 @@
-const Favicon = (): JSX.Element => {
+const Favicon = (): React.ReactNode => {
   return (
     <>
       <link

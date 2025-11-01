@@ -1,6 +1,6 @@
-import { Card, Container } from "@nextui-org/react";
+import { Card, CardHeader, CardBody } from "@heroui/react";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useRoute } from "../../content/useRoutes";
 import { Route } from "../../models/Route";
 import { getDocumentConfiguration } from "../../content/useDocument";
@@ -44,21 +44,26 @@ const PageContentComponent = ({
     (route) => route.isHomePage && route.path
   );
 
+  useEffect(() => {
+    if (foundHome) {
+      router.push(foundHome.path);
+    }
+  }, [foundHome, router]);
+
   if (foundHome) {
-    router.push(foundHome.path);
     return <LoadingPage />;
   }
 
   return (
-    <Container>
+    <div className="w-full">
       <Card>
-        <Card.Header>Route {router.asPath} was not defined...</Card.Header>
-        <Card.Body>
+        <CardHeader>Route {router.asPath || 'unknown'} was not defined...</CardHeader>
+        <CardBody>
           Also no home route was defined so.. this is awkward. We are not really
           sure where you should go ¯\_(ツ)_/¯
-        </Card.Body>
+        </CardBody>
       </Card>
-    </Container>
+    </div>
   );
 };
 

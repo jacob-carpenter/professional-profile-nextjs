@@ -1,4 +1,5 @@
-import { Button, useTheme } from "@nextui-org/react";
+import { Button } from "@heroui/react";
+import { useTheme } from "next-themes";
 import { memo, useState } from "react";
 import { Category, CloseSquare } from "react-iconly";
 import { SideBar } from "../../SideBar/SideBar";
@@ -9,19 +10,19 @@ const NavBarMenuButtonComponent = () => {
   const [opened, setOpened] = useState(false);
 
   const iconProps = { filled: true };
-  const { isDark } = useTheme();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <>
       <Button
-        auto
-        ghost
-        rounded
-        icon={
-          opened ? <CloseSquare {...iconProps} /> : <Category {...iconProps} />
-        }
+        isIconOnly
+        variant="ghost"
+        radius="full"
         onClick={() => setOpened((value) => !value)}
-      />
+      >
+        {opened ? <CloseSquare {...iconProps} /> : <Category {...iconProps} />}
+      </Button>
 
       <nav
         className={clsx({

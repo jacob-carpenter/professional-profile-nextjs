@@ -1,5 +1,4 @@
 import * as React from "react";
-import { styled, CSS } from "@nextui-org/react";
 import { withDefaults } from "../../utils/withDefaults";
 import { memo } from "react";
 
@@ -7,7 +6,7 @@ export interface FixedProps {
   offset?: number;
   shadow?: boolean;
   className?: string;
-  css?: CSS;
+  css?: any; // Keep for backwards compatibility but will use inline styles
   children?: React.ReactNode;
 }
 
@@ -17,29 +16,26 @@ const defaultProps = {
   className: "",
 };
 
-const StyledFixed = styled("div", {
-  background: "transparent",
-  position: "fixed",
-  zIndex: "$max",
-  variants: {
-    shadow: {
-      true: {
-        bs: "$sm",
-      },
-    },
-  },
-});
-
 const FixedComponent: React.FC<FixedProps> = ({
   offset,
   children,
   shadow,
   css,
+  className,
 }) => {
   return (
-    <StyledFixed css={{ ...css, top: offset || 0 }} shadow={shadow}>
+    <div
+      className={`${className} ${shadow ? "shadow-sm" : ""}`}
+      style={{
+        background: "transparent",
+        position: "fixed",
+        zIndex: 9999,
+        top: offset || 0,
+        ...css,
+      }}
+    >
       {children}
-    </StyledFixed>
+    </div>
   );
 };
 

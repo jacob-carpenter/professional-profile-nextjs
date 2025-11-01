@@ -29,7 +29,7 @@ export interface DocumentPage extends Page {
 export interface ComponentPage extends Page {
   // TODO if document, then children need to be auto-determined if they aren't statically defined
   // TODO Support direct document navigation based on path/link click
-  content: JSX.Element | Document;
+  content: React.ReactNode | Document;
 }
 
 export interface Link extends Route {

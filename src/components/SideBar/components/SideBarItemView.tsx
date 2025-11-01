@@ -1,6 +1,6 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Text, Link } from "@nextui-org/react";
+import { FontAwesomeIcon } from "../../Icons/FontAwesomeIcon";
+import { Link } from "@heroui/react";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { memo } from "react";
@@ -10,7 +10,7 @@ import { isRouteSelected } from "../../../utils/routeUtilities";
 import { withDefaults } from "../../../utils/withDefaults";
 
 interface PlaceElementProps {
-  children?: JSX.Element | (JSX.Element | string)[];
+  children?: React.ReactNode;
   placement?: {
     top?: number;
     bottom?: number;
@@ -51,7 +51,7 @@ export interface SideBarItemViewProps {
   path?: string;
   link?: string;
   hasSubContent: boolean;
-  children?: JSX.Element;
+  children?: React.ReactNode;
 }
 
 const SideBarItemViewComponent = (props: SideBarItemViewProps) => {
@@ -70,12 +70,12 @@ const SideBarItemViewComponent = (props: SideBarItemViewProps) => {
   const router = useRouter();
 
   const href = link || `/${path}`;
-  const color = isRouteSelected(path, router.asPath) ? "secondary" : "text";
+  const isActive = isRouteSelected(path, router.asPath || '');
 
   return (
     <>
-      <Text h3={level === 0} h6={level === 1} color={color}>
-        <Link color={color} isExternal={!!link} href={href}>
+      <div className={`${level === 0 ? 'text-xl font-bold' : level === 1 ? 'text-base font-semibold' : 'text-sm'} ${isActive ? 'text-primary' : ''}`}>
+        <Link isExternal={!!link} href={href}>
           {icon ? (
             <PlaceElement placement={{ right: 4, top: 3 }}>
               {iconType === "fontawesome" ? (
@@ -99,7 +99,7 @@ const SideBarItemViewComponent = (props: SideBarItemViewProps) => {
             </PlaceElement>
           </>
         ) : undefined}
-      </Text>
+      </div>
       {children}
     </>
   );

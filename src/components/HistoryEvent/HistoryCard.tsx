@@ -1,4 +1,4 @@
-import { Card as NextUICard, Grid } from "@nextui-org/react";
+import { Card as HeroUICard, CardBody, CardFooter, Divider } from "@heroui/react";
 import { memo } from "react";
 import { HistoryEventCardHeader } from "./HistoryEventCardHeader";
 import { v4 } from "uuid";
@@ -11,42 +11,42 @@ import dompurify from "dompurify";
 const HistoryCardComponent = (cardConfiguration: HistoryCardType) => {
   const { body, details } = cardConfiguration;
   return (
-    <NextUICard>
+    <HeroUICard>
       <HistoryEventCardHeader {...cardConfiguration} />
       {body || cardConfiguration.events ? (
         <>
-          <NextUICard.Divider />
-          <NextUICard.Body>
+          <Divider />
+          <CardBody>
             {body}
-            <Grid.Container gap={1}>
+            <div className="flex flex-col gap-1">
               {cardConfiguration.events?.map((historyEvent) => (
-                <Grid key={v4()} xs={12}>
+                <div key={v4()} className="w-full">
                   <HistoryEventCard {...historyEvent} />
-                </Grid>
+                </div>
               ))}
-            </Grid.Container>
-          </NextUICard.Body>
+            </div>
+          </CardBody>
           {details?.length ? (
             <>
-              <NextUICard.Divider />
-              <NextUICard.Footer>
-                <Grid.Container>
+              <Divider />
+              <CardFooter>
+                <div className="flex flex-col w-full">
                   {details?.map((eventDetail) => (
-                    <Grid xs={12} key={v4()} css={{ paddingLeft: "24px" }}>
+                    <div key={v4()} className="w-full pl-6">
                       <div
                         dangerouslySetInnerHTML={{
                           __html: dompurify.sanitize(eventDetail),
                         }}
                       />
-                    </Grid>
+                    </div>
                   ))}
-                </Grid.Container>
-              </NextUICard.Footer>
+                </div>
+              </CardFooter>
             </>
           ) : undefined}
         </>
       ) : undefined}
-    </NextUICard>
+    </HeroUICard>
   );
 };
 

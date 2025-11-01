@@ -1,56 +1,26 @@
-import { Col, Container, Row, useTheme } from "@nextui-org/react";
+import { useTheme } from "next-themes";
 import { memo } from "react";
 import { withDefaults } from "../../utils/withDefaults";
 import { Fixed } from "../Fixed/Fixed";
 import { SideBar } from "../SideBar/SideBar";
 
 export interface PageContainerProps {
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }
 
 const PageContainerComponent = ({ children }: PageContainerProps) => {
-  const { isDark } = useTheme();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   return (
-    <Container
-      fluid
-      as="main"
-      css={{
-        position: "relative",
-        paddingBottom: "36px",
-        backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
-        minHeight: "calc(100vh - 76px)",
-        paddingLeft: "0px",
-        paddingRight: "0px",
-        margin: "0",
-        maxWidth: "100%",
-      }}
-      display="flex"
+    <main
       id="main-container"
+      className="relative pb-9 min-h-[calc(100vh-76px)] p-0 m-0 max-w-full flex"
+      style={{
+        backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
+      }}
     >
-      <Row
-        css={{
-          "@md": {
-            pt: "1rem",
-          },
-          padding: "0px",
-        }}
-        gap={0}
-      >
-        <Col
-          css={{
-            width: "32%",
-            display: "none",
-            "@sm": {
-              display: "block",
-            },
-            "@md": {
-              width: "18%",
-            },
-            "@xl": {
-              width: "14%",
-            },
-          }}
-        >
+      <div className="flex w-full p-0 md:pt-4 gap-0">
+        <div className="hidden sm:block sm:w-[32%] md:w-[18%] xl:w-[14%]">
           <Fixed
             css={{
               maxHeight: "calc(100vh - 4rem)",
@@ -73,31 +43,12 @@ const PageContainerComponent = ({ children }: PageContainerProps) => {
           >
             <SideBar />
           </Fixed>
-        </Col>
-        <Col
-          css={{
-            maxWidth: "100%",
-            minHeight: "100%",
-            overflow: "auto",
-            mt: "36px",
-            "@xsMax": {
-              p: 0,
-            },
-            "@xs": {
-              paddingLeft: "0px",
-            },
-            "@sm": {
-              paddingLeft: "24px",
-            },
-            "@xl": {
-              paddingLeft: "36px",
-            },
-          }}
-        >
+        </div>
+        <div className="max-w-full min-h-full overflow-auto mt-9 p-0 sm:pl-6 xl:pl-9 flex-1">
           {children}
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </main>
   );
 };
 

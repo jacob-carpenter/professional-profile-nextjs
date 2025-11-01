@@ -1,9 +1,9 @@
-import { Grid, Link, Tooltip } from "@nextui-org/react";
+import { Link, Tooltip } from "@heroui/react";
 import { memo } from "react";
 import { v4 } from "uuid";
 import { SocialMediaLink } from "../SocialMediaLinks/SocialMediaLink";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "../../Icons/FontAwesomeIcon";
 
 interface ExternalLinksComponentProps {
   links: string[];
@@ -16,19 +16,18 @@ const ExternalLinksComponent = ({
     return <SocialMediaLink href={links[0]} gutterRight={false} />;
   return (
     <Tooltip
-      trigger="click"
-      placement={"leftStart"}
+      placement={"left-start"}
       content={
-        <Grid.Container gap={1}>
+        <div className="flex gap-1">
           {links.map((link, index) => (
-            <Grid key={v4()} css={{ height: "36px" }}>
+            <div key={v4()} className="h-9">
               <SocialMediaLink
                 href={link}
                 gutterRight={index + 1 === links.length}
               />
-            </Grid>
+            </div>
           ))}
-        </Grid.Container>
+        </div>
       }
     >
       <Link>

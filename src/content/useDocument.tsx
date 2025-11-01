@@ -19,7 +19,7 @@ const DocumentConfigurationContext = createContext<
 >(undefined);
 
 export const DocumentConfigurationContextProvider = (props: {
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   documentConfigurationId: string;
 }) => {
   const { children, documentConfigurationId } = props;

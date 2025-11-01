@@ -1,6 +1,6 @@
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card, Grid, Spacer } from "@nextui-org/react";
+import { FontAwesomeIcon } from "../Icons/FontAwesomeIcon";
+import { CardHeader as HeroUICardHeader, Spacer } from "@heroui/react";
 import { memo } from "react";
 import { Iconly } from "react-iconly";
 import { IconType } from "../../models/Route";
@@ -37,31 +37,31 @@ const CardHeaderComponent = ({
       );
 
   const cardTitle = (
-    <>
+    <div className="flex items-center">
       {iconComponent ? (
         <>
           {iconComponent}
-          <Spacer />
+          <Spacer x={1} />
         </>
       ) : undefined}
 
       <b style={{ fontWeight: "bolder" }}>{header}</b>
-    </>
+    </div>
   );
   return (
     <>
-      <Card.Header>
+      <HeroUICardHeader>
         {externalLinks?.length ? (
-          <Grid.Container gap={0}>
-            <Grid xs={10}>{cardTitle}</Grid>
-            <Grid xs={2} css={{ flexDirection: "row-reverse" }}>
+          <div className="flex w-full">
+            <div className="flex-grow">{cardTitle}</div>
+            <div className="flex flex-row-reverse">
               <ExternalLinks links={externalLinks} />
-            </Grid>
-          </Grid.Container>
+            </div>
+          </div>
         ) : (
           cardTitle
         )}
-      </Card.Header>
+      </HeroUICardHeader>
     </>
   );
 };

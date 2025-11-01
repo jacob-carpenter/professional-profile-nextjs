@@ -6,7 +6,7 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { ButtonLinkComponent } from "../../ButtonLink/ButtonLink";
-import { Spacer } from "@nextui-org/react";
+import { Spacer } from "@heroui/react";
 
 const gitHubRegex = /^(http(s?):\/\/)?(www\.)?github\.([a-z])+/;
 const linkedinRegex =

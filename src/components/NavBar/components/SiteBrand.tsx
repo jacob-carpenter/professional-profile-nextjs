@@ -1,4 +1,4 @@
-import { Avatar, Container, Text } from "@nextui-org/react";
+import { Avatar } from "@heroui/react";
 import { memo } from "react";
 import { useSiteConfiguration } from "../../../content/useSiteConfiguration";
 
@@ -7,17 +7,23 @@ const SiteBrandComponent = () => {
   const { avatarImageSrc, name: siteTitle, role } = siteSettings;
 
   return (
-    <>
-      <Avatar squared zoomed src={avatarImageSrc} size="xl" text={siteTitle} />
-      <Container css={{ padding: "8px" }}>
-        <Text h3 b css={{ position: "relative", top: "12px" }}>
+    <div className="flex items-center gap-2">
+      <Avatar
+        radius="sm"
+        src={avatarImageSrc}
+        size="lg"
+        name={siteTitle}
+        isBordered
+      />
+      <div className="flex flex-col p-2">
+        <h3 className="font-bold text-lg relative top-3">
           {siteTitle}
-        </Text>
-        <Text css={{ paddingLeft: "40px", top: "-4px", position: "relative" }}>
+        </h3>
+        <p className="text-sm pl-10 relative -top-1">
           {role}
-        </Text>
-      </Container>
-    </>
+        </p>
+      </div>
+    </div>
   );
 };
 
