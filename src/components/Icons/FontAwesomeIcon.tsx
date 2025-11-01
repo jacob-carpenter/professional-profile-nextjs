@@ -14,7 +14,7 @@ type FontAwesomeIconProps = Omit<RawFontAwesomeIconProps, "icon"> & {
  * like <FontAwesomeIcon icon={icon} size="xl" /> is supported.
  */
 const FontAwesomeIcon: React.FC<FontAwesomeIconProps> = ({ icon, size, ...rest }) => {
-    return <></>;
+    return <RawFontAwesomeIcon icon={icon} size={size} {...rest} />;
 };
 
 export type { FontAwesomeIconProps };

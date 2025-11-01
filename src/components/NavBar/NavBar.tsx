@@ -15,10 +15,11 @@ import { useRouter } from "next/router";
 import { memo } from "react";
 import { withDefaults } from "../../utils/withDefaults";
 import { SocialMediaLinks } from "../Links/SocialMediaLinks/SocialMediaLinks";
+import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
 
 const NavBarComponent = () => {
-  const { setTheme, theme } = useNextTheme();
-  const isDark = theme === "dark";
+  const { setTheme } = useNextTheme();
+  const isDark = useIsDarkTheme();
   const router = useRouter();
 
   const { siteSettings } = useSiteConfiguration();

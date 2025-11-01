@@ -1,17 +1,16 @@
 import { Button } from "@heroui/react";
-import { useTheme } from "next-themes";
 import { memo, useState } from "react";
 import { Category, CloseSquare } from "react-iconly";
 import { SideBar } from "../../SideBar/SideBar";
 import styles from "./NavBarMenuButton.module.css";
 import { clsx } from "clsx";
+import { useIsDarkTheme } from "../../../hooks/useIsDarkTheme";
 
 const NavBarMenuButtonComponent = () => {
   const [opened, setOpened] = useState(false);
 
   const iconProps = { filled: true };
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const isDark = useIsDarkTheme();
 
   return (
     <>

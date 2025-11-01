@@ -1,16 +1,15 @@
-import { useTheme } from "next-themes";
 import { memo } from "react";
 import { withDefaults } from "../../utils/withDefaults";
 import { Fixed } from "../Fixed/Fixed";
 import { SideBar } from "../SideBar/SideBar";
+import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
 
 export interface PageContainerProps {
   children: React.ReactNode;
 }
 
 const PageContainerComponent = ({ children }: PageContainerProps) => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const isDark = useIsDarkTheme();
   return (
     <main
       id="main-container"

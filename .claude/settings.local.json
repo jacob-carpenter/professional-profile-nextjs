@@ -4,7 +4,10 @@
       "Bash(powershell -Command:*)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(timeout 20 npm run dev:*)"
+      "Bash(timeout 20 npm run dev:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []

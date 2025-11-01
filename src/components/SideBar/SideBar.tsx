@@ -7,7 +7,7 @@ import {
 } from "../../utils/routeUtilities";
 import { SideBarItem } from "./components/SideBarItem";
 import { useMobile } from "../../utils/useMobile";
-import { useTheme } from "next-themes";
+import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
 import styles from "./SideBar.module.css";
 import clsx from "clsx";
 import { memo } from "react";
@@ -22,8 +22,7 @@ interface SideBarProps {
 
 const SideBarComponent = ({ routes, level = 0 }: SideBarProps) => {
   const isMobile = useMobile();
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const isDark = useIsDarkTheme();
 
   const { routes: defaultRoutes } = useRoutes();
   let resolvedRoutes = routes;
