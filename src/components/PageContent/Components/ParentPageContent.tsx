@@ -18,7 +18,7 @@ const ParentPageContentComponent = ({
         <div key={v4()} className="w-full">
           <Divider {...child} header={child.title} />
           <Spacer y={4} />
-          <div className="w-full pl-4">
+          <div className="w-full pl-8">
             <PageContent route={child} />
           </div>
           <Spacer y={4} />

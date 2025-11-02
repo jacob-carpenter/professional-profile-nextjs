@@ -25,7 +25,7 @@ const PageContentComponent = ({
   let content = undefined;
   if (resolvedRoute?.documentConfigurationId)
     content = (
-      <div className="pl-6">
+      <>
         <DocumentPageContent
           document={getDocumentConfiguration(
             resolvedRoute.documentConfigurationId
@@ -34,7 +34,7 @@ const PageContentComponent = ({
         {resolvedRoute.children ? (
           <ParentPageContent route={resolvedRoute} />
         ) : undefined}
-      </div>
+      </>
     );
 
   if (content) return content;

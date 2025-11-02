@@ -12,7 +12,7 @@ export interface PageContainerProps {
 const PageContainerComponent = ({ children }: PageContainerProps) => {
   const isDark = useIsDarkTheme();
   const { columnMaxSpan: maxSpan } = useResponsive();
-  const columnMaxSpan = maxSpan * 3; // Using triple the span for more columns
+  const columnMaxSpan = Math.min(maxSpan * 3, 12); // Using triple the span for more columns
   
   const isMobile = useMobile();
   const sideBarSpan = isMobile ? 0 : Math.max(Math.floor(columnMaxSpan / 4), 2);

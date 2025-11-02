@@ -21,13 +21,15 @@ const SideBarItemComponent = (props: SideBarItemProps) => {
   const [expanded, setExpanded] = useState(defaultExpanded);
   useEffect(() => {
     if (expanded !== defaultExpanded) setExpanded(defaultExpanded);
-  }, [expanded, defaultExpanded]);
+  }, [defaultExpanded]);
 
   const showChildren = children?.length && level + 1 <= MAX_SIDE_BAR_LEVEL;
 
+  console.log(expanded);
+
   if (level > MAX_SIDE_BAR_LEVEL) return <></>;
   return (
-    <div>
+    <div className={`pl-${level * 2}`}>
       <SideBarItemView
         {...props}
         path={path}
