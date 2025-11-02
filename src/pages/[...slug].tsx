@@ -10,7 +10,7 @@ const CustomPage = () => {
   if (!router.asPath || router.asPath === "/[...slug]") return <LoadingPage />;
 
   return (
-    <div className="w-full pr-8">
+    <div className="w-full">
       <PageContent />
     </div>
   );

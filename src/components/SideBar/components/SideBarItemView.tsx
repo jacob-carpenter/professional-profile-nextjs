@@ -74,7 +74,7 @@ const SideBarItemViewComponent = (props: SideBarItemViewProps) => {
 
   return (
     <>
-      <div className={`${level === 0 ? 'text-xl font-bold' : level === 1 ? 'text-base font-semibold' : 'text-sm'} ${isActive ? 'text-primary' : ''}`}>
+      <div className={`flex ${level === 0 ? 'text-xl font-bold' : level === 1 ? 'text-base font-semibold' : 'text-sm'} ${isActive ? 'text-primary' : ''} pl-${level * 4} pt-3`}>
         <Link isExternal={!!link} href={href}>
           {icon ? (
             <PlaceElement placement={{ right: 4, top: 3 }}>
@@ -92,7 +92,7 @@ const SideBarItemViewComponent = (props: SideBarItemViewProps) => {
         {hasSubContent ? (
           <>
             {" "}
-            <PlaceElement placement={{ left: 4, top: 4 }}>
+            <PlaceElement placement={{ left: 2, top: 2 }}>
               <span onClick={onExpand}>
                 {expanded ? <ChevronDown /> : <ChevronRight />}
               </span>

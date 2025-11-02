@@ -11,7 +11,6 @@
         "iconPrefix": "fas",
         "iconType": "fontawesome",
         "icon": "mug-saucer",
-        "colSpan": 3,
         "details": ["<li>Willing to learn any tech stack and language.</li>"]
       },
       {
@@ -21,7 +20,6 @@
         "body": "Working remotely out of Lee's Summit, Missouri.",
         "iconPrefix": "fas",
         "iconType": "fontawesome",
-        "colSpan": 3,
         "icon": "briefcase"
       },
       {
