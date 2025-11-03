@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint:check": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
     "start:prod": "npm run build && npm run start"
   },
   "dependencies": {

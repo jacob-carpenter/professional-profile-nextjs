@@ -1,6 +1,5 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { withDefaults } from "../../utils/withDefaults";
-import { Fixed } from "../Fixed/Fixed";
 import { SideBar } from "../SideBar/SideBar";
 import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
 import { useMobile, useResponsive } from "../../utils/useMobile";
@@ -11,11 +10,8 @@ export interface PageContainerProps {
 
 const PageContainerComponent = ({ children }: PageContainerProps) => {
   const isDark = useIsDarkTheme();
-  const { columnMaxSpan: maxSpan } = useResponsive();
-  const columnMaxSpan = Math.min(maxSpan * 3, 12); // Using triple the span for more columns
-  
   const isMobile = useMobile();
-  const sideBarSpan = isMobile ? 0 : Math.max(Math.floor(columnMaxSpan / 4), 2);
+
   return (
     <main
       id="main-container"
@@ -24,15 +20,13 @@ const PageContainerComponent = ({ children }: PageContainerProps) => {
         backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
       }}
     >
-      <div className={`h-full grid grid-cols-${columnMaxSpan}`}>
+      <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-[20%_80%]'} min-h-screen`}>
         {!isMobile && (
-          <div className={`col-span-${sideBarSpan}`}>
-            <div className="h-full pl-2">
-              <SideBar />
-            </div>
+          <div className={`block w-min-33`}>
+            <SideBar />
           </div>)
         }
-        <div className={`mt-8 col-span-${columnMaxSpan - sideBarSpan} pb-6 ${isMobile ? 'px-4' : 'px-6'}`} style={{ minHeight: 'calc(100vh - 97px)' }}>
+        <div className={`w-full pb-6 ${isMobile ? 'px-4' : 'px-6'} mt-4`} style={{minHeight: 'calc(100vh - 64px)', overflowY: 'auto'}}>
           {children}
         </div>
       </div>

@@ -24,7 +24,7 @@ const ExternalLinksComponent = ({
   };
   const content = (<div className="flex gap-1" onMouseEnter={openTooltip} onMouseLeave={closeTooltip}>
           {links.map((link, index) => (
-            <div key={v4()} className="h-9">
+            <div key={v4()} className="h-9 align-middle flex items-center">
               <SocialMediaLink
                 href={link}
                 gutterRight={index + 1 === links.length}

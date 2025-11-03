@@ -38,6 +38,7 @@ const SideBarComponent = ({ routes, level = 0 }: SideBarProps) => {
         [styles.fullResolution]: !isMobile,
         [styles.isDark]: isDark,
       })}
+      
     >
       {resolvedRoutes
         .filter((route) =>

@@ -25,11 +25,9 @@ const SideBarItemComponent = (props: SideBarItemProps) => {
 
   const showChildren = children?.length && level + 1 <= MAX_SIDE_BAR_LEVEL;
 
-  console.log(expanded);
-
   if (level > MAX_SIDE_BAR_LEVEL) return <></>;
   return (
-    <div className={`pl-${level * 2}`}>
+    <div className={`pl-${level * 6}`}>
       <SideBarItemView
         {...props}
         path={path}
