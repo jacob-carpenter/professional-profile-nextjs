@@ -1,6 +1,6 @@
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card, Grid, Spacer } from "@nextui-org/react";
+import { FontAwesomeIcon } from "../Icons/FontAwesomeIcon";
+import { CardHeader, Spacer } from "@heroui/react";
 import { memo } from "react";
 import { Iconly } from "react-iconly";
 import { IconType } from "../../models/Route";
@@ -10,7 +10,7 @@ interface HistoryEventCardHeaderComponentProps {
   icon?: string;
   iconPrefix?: string;
   iconType?: IconType;
-  headerSuffix?: string | JSX.Element | JSX.Element[];
+  headerSuffix?: string | React.ReactNode;
 }
 
 const HistoryEventCardHeaderComponent = ({
@@ -36,35 +36,24 @@ const HistoryEventCardHeaderComponent = ({
       );
   return (
     <>
-      <Card.Header>
-        <Grid.Container gap={1}>
-          <Grid
-            xs={headerSuffix ? 6 : 12}
-            md={headerSuffix ? 8 : 12}
-            lg={headerSuffix ? 9 : 12}
-            xl={headerSuffix ? 10 : 12}
-          >
+      <CardHeader>
+        <div className="flex w-full gap-1">
+          <div className={`flex items-center ${headerSuffix ? "flex-grow sm:flex-grow-0 sm:w-2/3 md:w-3/4 lg:w-9/12 xl:w-10/12" : "w-full"}`}>
             {iconComponent ? (
               <>
                 {iconComponent}
-                <Spacer />
+                <Spacer x={1} />
               </>
             ) : undefined}
             <b style={{ fontWeight: "bolder" }}>{header}</b>
-          </Grid>
+          </div>
           {headerSuffix ? (
-            <Grid
-              xs={6}
-              md={4}
-              lg={3}
-              xl={2}
-              css={{ flexDirection: "row-reverse" }}
-            >
+            <div className="flex flex-row-reverse flex-grow sm:flex-grow-0 sm:w-1/3 md:w-1/4 lg:w-3/12 xl:w-2/12">
               {headerSuffix}
-            </Grid>
+            </div>
           ) : undefined}
-        </Grid.Container>
-      </Card.Header>
+        </div>
+      </CardHeader>
     </>
   );
 };

@@ -1,11 +1,11 @@
-import { Container, Loading } from "@nextui-org/react";
+import { Spinner } from "@heroui/react";
 import { memo } from "react";
 
 const LoadingPageComponent = () => {
   return (
-    <Container fluid>
-      <Loading size="xl" css={{ left: "50%" }} />
-    </Container>
+    <div className="w-full flex justify-center">
+      <Spinner size="lg" />
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import { Grid } from "@nextui-org/react";
 import { memo } from "react";
 import { v4 } from "uuid";
 import { Divider } from "../../Divider/Divider";
@@ -11,62 +10,65 @@ import {
 } from "../../../models/Document";
 import { Card } from "../../Card/Card";
 import { HistoryCard } from "../../HistoryEvent/HistoryCard";
-import { useMobile } from "../../../utils/useMobile";
+import { useMobile, useResponsive } from "../../../utils/useMobile";
 
 const DocumentEntityComponent = (entity: DocumentEntityType) => {
   const isMobile = useMobile();
-  const indentPadding = isMobile ? "32px" : "64px";
+  const { columnMaxSpan } = useResponsive()
+  const indentPadding = isMobile ? "pl-8" : "pl-16";
   const { indent } = entity;
+
   switch (entity.type) {
     case "Card":
       const cardConfiguration = entity as CardType;
-      const { xs, sm, md, lg, xl } = cardConfiguration;
+      const { colSpan } = cardConfiguration;
+
+      // Build responsive grid classes
+      const gridClasses = [colSpan ? `col-span-${colSpan}` : "col-span-full"].filter(Boolean)
+
       return (
-        <Grid
+        <div
           key={v4()}
-          xs={xs}
-          sm={sm}
-          md={md}
-          lg={lg}
-          xl={xl}
-          css={{ paddingLeft: indent ? indentPadding : undefined }}
+          className={`${gridClasses} ${indent ? indentPadding : ""}`}
         >
           <Card {...cardConfiguration} />
-        </Grid>
+        </div>
       );
+
     case "Divider":
       const dividerConfiguration = entity as DividerType;
       return (
-        <Grid key={v4()} xs={12}>
+        <div key={v4()} className="col-span-full">
           <Divider {...dividerConfiguration} />
-        </Grid>
+        </div>
       );
+
     case "ParentEntity":
       const parentEntity = entity as ParentEntity;
       return (
-        <Grid
+        <div
           key={v4()}
-          xs={12}
-          css={{ paddingLeft: indent ? indentPadding : undefined }}
+          className={`col-span-full ${indent ? indentPadding : ""}`}
         >
-          <Grid.Container gap={1}>
+          <div className={`grid grid-cols-${columnMaxSpan} gap-4`}>
             {parentEntity.children.map((childDocumentEntity) => (
               <DocumentEntity key={v4()} {...childDocumentEntity} />
             ))}
-          </Grid.Container>
-        </Grid>
+          </div>
+        </div>
       );
+
     case "HistoryCard":
       const historyCardConfiguration = entity as HistoryCardType;
       return (
-        <Grid
+        <div
           key={v4()}
-          xs={12}
-          css={{ paddingLeft: indent ? indentPadding : undefined }}
+          className={`col-span-full ${indent ? indentPadding : ""}`}
         >
           <HistoryCard {...historyCardConfiguration} />
-        </Grid>
+        </div>
       );
+
     default:
       return <></>;
   }

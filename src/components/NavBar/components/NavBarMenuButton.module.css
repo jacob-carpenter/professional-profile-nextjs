@@ -1,6 +1,6 @@
 .mobileNavigationContainer {
   position: fixed;
-  top: calc(63px + 14px);
+  top: 62px;
   z-index: 1001;
   right: 0;
   left: 0;

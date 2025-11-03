@@ -1,4 +1,4 @@
-import { Card as NextUICard, Grid } from "@nextui-org/react";
+import { Card as HeroUICard, CardBody, Divider } from "@heroui/react";
 import { memo } from "react";
 import { HistoryEventCardHeader } from "./HistoryEventCardHeader";
 import { v4 } from "uuid";
@@ -29,7 +29,7 @@ const HistoryEventCardComponent = (historyEvent: HistoryEvent) => {
   const { details } = historyEvent;
   return (
     <>
-      <NextUICard>
+      <HeroUICard>
         <HistoryEventCardHeader
           {...historyEvent}
           headerSuffix={
@@ -42,23 +42,23 @@ const HistoryEventCardComponent = (historyEvent: HistoryEvent) => {
         />
         {details?.length ? (
           <>
-            <NextUICard.Divider />
-            <NextUICard.Body>
-              <Grid.Container>
+            <Divider />
+            <CardBody>
+              <div className="flex flex-col w-full">
                 {details?.map((eventDetail) => (
-                  <Grid xs={12} key={v4} css={{ paddingLeft: "24px" }}>
+                  <div key={v4()} className="w-full pl-6">
                     <div
                       dangerouslySetInnerHTML={{
                         __html: dompurify.sanitize(eventDetail),
                       }}
                     />
-                  </Grid>
+                  </div>
                 ))}
-              </Grid.Container>
-            </NextUICard.Body>
+              </div>
+            </CardBody>
           </>
         ) : undefined}
-      </NextUICard>
+      </HeroUICard>
     </>
   );
 };

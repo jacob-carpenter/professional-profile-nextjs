@@ -1,4 +1,3 @@
-import { Container } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { LoadingPage } from "../components/LoadingPage/LoadingPage";
 import { PageContent } from "../components/PageContent/PageContent";
@@ -8,12 +7,12 @@ import { PageContent } from "../components/PageContent/PageContent";
 const CustomPage = () => {
   const router = useRouter();
 
-  if (router.asPath === "/[...slug]") return <LoadingPage />;
+  if (!router.asPath || router.asPath === "/[...slug]") return <LoadingPage />;
 
   return (
-    <Container fluid css={{ paddingRight: "32px" }}>
+    <div className="w-full">
       <PageContent />
-    </Container>
+    </div>
   );
 };
 

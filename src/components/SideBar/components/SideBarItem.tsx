@@ -1,4 +1,4 @@
-import { Container, Spacer } from "@nextui-org/react";
+import { Spacer } from "@heroui/react";
 import { useRouter } from "next/router";
 import { memo, useEffect, useState } from "react";
 import { Route } from "../../../models/Route";
@@ -16,18 +16,18 @@ const SideBarItemComponent = (props: SideBarItemProps) => {
   const { level, path, children, gutterBottom } = props;
 
   const router = useRouter();
-  const resolvedRouterPath = router.asPath;
-  const defaultExpanded = resolvedRouterPath.startsWith(`/${path}`);
+  const resolvedRouterPath = router.asPath || '';
+  const defaultExpanded = path && resolvedRouterPath ? resolvedRouterPath.startsWith(`/${path}`) : false;
   const [expanded, setExpanded] = useState(defaultExpanded);
   useEffect(() => {
     if (expanded !== defaultExpanded) setExpanded(defaultExpanded);
-  }, [expanded, defaultExpanded]);
+  }, [defaultExpanded]);
 
   const showChildren = children?.length && level + 1 <= MAX_SIDE_BAR_LEVEL;
 
   if (level > MAX_SIDE_BAR_LEVEL) return <></>;
   return (
-    <Container color="text">
+    <div className={`pl-${level * 6}`}>
       <SideBarItemView
         {...props}
         path={path}
@@ -39,8 +39,8 @@ const SideBarItemComponent = (props: SideBarItemProps) => {
           <SideBar level={level + 1} routes={children} />
         ) : undefined}
       </SideBarItemView>
-      {gutterBottom ? <Spacer /> : undefined}
-    </Container>
+      {gutterBottom ? <Spacer y={4} /> : undefined}
+    </div>
   );
 };
 

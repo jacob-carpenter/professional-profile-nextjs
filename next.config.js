@@ -1,7 +1,3 @@
 module.exports = {
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
+  transpilePackages: ['@heroui/react', '@heroui/theme', '@heroui/system'],
 };

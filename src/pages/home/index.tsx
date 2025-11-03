@@ -1,6 +1,5 @@
-import { Container, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { LoadingPage } from "../../components/LoadingPage/LoadingPage";
 import { useRoutes } from "../../content/useRoutes";
 import { flattenRoutes } from "../../utils/routeUtilities";
@@ -13,7 +12,9 @@ const HomePageComponent = () => {
     (route) => route.isHomePage && route.path
   );
 
-  if (foundHome) router.push(foundHome.path);
+  useEffect(() => {
+    if (foundHome) router.push(foundHome.path);
+  }, [foundHome, router]);
 
   return <LoadingPage />;
 };

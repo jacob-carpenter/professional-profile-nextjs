@@ -3,7 +3,7 @@
   "type": "SiteConfiguration",
   "siteSettings": {
     "name": "Jacob Carpenter",
-    "role": "Full Stack Engineer",
+    "role": "Full-Stack Engineer",
     "avatarImageSrc": "/ProfilePic.png",
     "siteSource": "https://github.com/jacob-carpenter/wip",
     "routeConfigurationId": "685a5bf1-2e14-4035-99bc-fb1720f6b743",

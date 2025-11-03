@@ -7,7 +7,7 @@ import {
 } from "../../utils/routeUtilities";
 import { SideBarItem } from "./components/SideBarItem";
 import { useMobile } from "../../utils/useMobile";
-import { Container, useTheme } from "@nextui-org/react";
+import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
 import styles from "./SideBar.module.css";
 import clsx from "clsx";
 import { memo } from "react";
@@ -22,7 +22,7 @@ interface SideBarProps {
 
 const SideBarComponent = ({ routes, level = 0 }: SideBarProps) => {
   const isMobile = useMobile();
-  const { isDark } = useTheme();
+  const isDark = useIsDarkTheme();
 
   const { routes: defaultRoutes } = useRoutes();
   let resolvedRoutes = routes;
@@ -31,13 +31,14 @@ const SideBarComponent = ({ routes, level = 0 }: SideBarProps) => {
   }
 
   return (
-    <Container
+    <div
       className={clsx({
         [styles.baseSideBar]: level === 0,
         [styles.isMobile]: isMobile,
         [styles.fullResolution]: !isMobile,
         [styles.isDark]: isDark,
       })}
+      
     >
       {resolvedRoutes
         .filter((route) =>
@@ -59,7 +60,7 @@ const SideBarComponent = ({ routes, level = 0 }: SideBarProps) => {
             }
           />
         ))}
-    </Container>
+    </div>
   );
 };
 

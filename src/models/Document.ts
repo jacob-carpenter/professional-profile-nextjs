@@ -11,11 +11,7 @@ interface DocumentEntity extends Entity {
 export interface Card extends DocumentEntity {
   header: string;
   body: string;
-  xs?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
+  colSpan?: number;
   externalLinks?: string[];
   details?: string[];
 }

@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, Tooltip } from "@nextui-org/react";
-import { memo, useState } from "react";
+import { FontAwesomeIcon } from "../Icons/FontAwesomeIcon";
+import { Link, Tooltip } from "@heroui/react";
+import { memo } from "react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 interface ButtonLinkProps {
@@ -12,33 +12,26 @@ interface ButtonLinkProps {
     | "left"
     | "right"
     | "top"
-    | "topStart"
-    | "topEnd"
-    | "leftStart"
-    | "leftEnd"
-    | "bottomStart"
-    | "bottomEnd"
-    | "rightStart"
-    | "rightEnd";
+    | "top-start"
+    | "top-end"
+    | "left-start"
+    | "left-end"
+    | "bottom-start"
+    | "bottom-end"
+    | "right-start"
+    | "right-end";
 }
 
 export const ButtonLinkComponent = ({
   href,
   tooltip,
   icon,
-  placement = "bottomStart",
+  placement = "bottom-start",
 }: ButtonLinkProps) => {
-  const [showTooltip, setTooltip] = useState(false);
-
   return (
-    <Tooltip content={tooltip} visible={showTooltip} placement={placement}>
-      <Link href={href}>
-        <div
-          onMouseOver={() => setTooltip(true)}
-          onMouseOut={() => setTooltip(false)}
-        >
-          {icon ? <FontAwesomeIcon icon={icon} size="xl" /> : href}
-        </div>
+    <Tooltip content={tooltip} placement={placement}>
+      <Link href={href} isExternal>
+        {icon ? <FontAwesomeIcon icon={icon} size="xl" /> : href}
       </Link>
     </Tooltip>
   );

@@ -6,8 +6,7 @@ export const isRouteSelected = <T extends Page | Link>(
   currentPath: string
 ) => {
   const path = (item as Page)?.path || item;
-  if (!path) return false;
-  7;
+  if (!path || !currentPath) return false;
   return currentPath.startsWith(`/${path}`);
 };
 

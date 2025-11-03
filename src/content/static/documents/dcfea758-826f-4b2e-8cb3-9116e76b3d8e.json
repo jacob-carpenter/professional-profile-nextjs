@@ -11,8 +11,6 @@
         "iconPrefix": "fas",
         "iconType": "fontawesome",
         "icon": "mug-saucer",
-        "xs": 12,
-        "md": 6,
         "details": ["<li>Willing to learn any tech stack and language.</li>"]
       },
       {
@@ -22,9 +20,7 @@
         "body": "Working remotely out of Lee's Summit, Missouri.",
         "iconPrefix": "fas",
         "iconType": "fontawesome",
-        "icon": "briefcase",
-        "xs": 12,
-        "md": 6
+        "icon": "briefcase"
       },
       {
         "id": "beea2620-cff1-42cd-937f-a0136f500326",
@@ -42,9 +38,7 @@
             "id": "de6fc5f4-8ae3-4b34-bcc4-62708c06587b",
             "type": "Card",
             "header": "Javascript",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "square-js"
@@ -53,9 +47,7 @@
             "id": "1bdbd2b4-8e93-454f-9311-34ac75aa26c2",
             "type": "Card",
             "header": "Typescript",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "node-js"
@@ -64,9 +56,7 @@
             "id": "6a93ff2f-ca7a-4d96-a6dc-ee8595492518",
             "type": "Card",
             "header": "NodeJS",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "node-js"
@@ -75,9 +65,7 @@
             "id": "dc1b683b-f6b8-4f55-9f64-b54b9931e28c",
             "type": "Card",
             "header": "React",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "react"
@@ -87,9 +75,7 @@
             "type": "Card",
             "header": "Angular",
             "tooltip": "Out of date. Last time professional work was done in this space was at Service Management Group.",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "angular"
@@ -98,9 +84,7 @@
             "id": "55097a3c-1ae8-48f2-9478-997417d14340",
             "type": "Card",
             "header": "NextJS",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "node-js"
@@ -109,9 +93,7 @@
             "id": "cd6ba1c8-511f-4cc9-8a03-4040f299828b",
             "type": "Card",
             "header": "SQL",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fas",
             "iconType": "fontawesome",
             "icon": "database"
@@ -120,9 +102,7 @@
             "id": "698c03b4-f88c-4ae5-aed9-857baf256213",
             "type": "Card",
             "header": "GraphQL",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fas",
             "iconType": "fontawesome",
             "icon": "database"
@@ -131,9 +111,7 @@
             "id": "f21b4682-994d-45f5-b4be-dac445a84179",
             "type": "Card",
             "header": "Java",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "java"
@@ -143,9 +121,7 @@
             "type": "Card",
             "header": "C#",
             "tooltip": "Out of date. Last time professional work was done in this space was at Service Management Group.",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "windows"
@@ -155,9 +131,7 @@
             "type": "Card",
             "header": "Azure",
             "tooltip": "Out of date. Last time professional work was done in this space was at Service Management Group.",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "windows"
@@ -166,9 +140,7 @@
             "id": "e586cbd2-0074-4ece-8288-85ea1e52ed2a",
             "type": "Card",
             "header": "GitLab",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "gitlab"
@@ -178,9 +150,7 @@
             "type": "Card",
             "header": "Jenkins",
             "tooltip": "Out of date. Last time professional work was done in this space was at Cerner Corporation.",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "jenkins"
@@ -189,9 +159,7 @@
             "id": "c674a0b1-a59a-41fb-b90a-6c50e1a2b2a0",
             "type": "Card",
             "header": "AWS",
-            "xs": 12,
-            "sm": 4,
-            "md": 2,
+            "colSpan": 1,
             "iconPrefix": "fab",
             "iconType": "fontawesome",
             "icon": "aws"

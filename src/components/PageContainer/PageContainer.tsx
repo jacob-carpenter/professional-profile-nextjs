@@ -1,103 +1,36 @@
-import { Col, Container, Row, useTheme } from "@nextui-org/react";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { withDefaults } from "../../utils/withDefaults";
-import { Fixed } from "../Fixed/Fixed";
 import { SideBar } from "../SideBar/SideBar";
+import { useIsDarkTheme } from "../../hooks/useIsDarkTheme";
+import { useMobile, useResponsive } from "../../utils/useMobile";
 
 export interface PageContainerProps {
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }
 
 const PageContainerComponent = ({ children }: PageContainerProps) => {
-  const { isDark } = useTheme();
+  const isDark = useIsDarkTheme();
+  const isMobile = useMobile();
+
   return (
-    <Container
-      fluid
-      as="main"
-      css={{
-        position: "relative",
-        paddingBottom: "36px",
-        backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
-        minHeight: "calc(100vh - 76px)",
-        paddingLeft: "0px",
-        paddingRight: "0px",
-        margin: "0",
-        maxWidth: "100%",
-      }}
-      display="flex"
+    <main
       id="main-container"
+      className="block"
+      style={{
+        backgroundColor: isDark ? "rgb(60, 60, 60)" : "rgb(200, 200, 200)",
+      }}
     >
-      <Row
-        css={{
-          "@md": {
-            pt: "1rem",
-          },
-          padding: "0px",
-        }}
-        gap={0}
-      >
-        <Col
-          css={{
-            width: "32%",
-            display: "none",
-            "@sm": {
-              display: "block",
-            },
-            "@md": {
-              width: "18%",
-            },
-            "@xl": {
-              width: "14%",
-            },
-          }}
-        >
-          <Fixed
-            css={{
-              maxHeight: "calc(100vh - 4rem)",
-              overflow: "auto",
-              zIndex: "$2",
-              pb: "$28",
-              "&::-webkit-scrollbar": {
-                width: "0px",
-              },
-              height: "100%",
-              padding: "0px",
-              "@md": {
-                width: "19%",
-              },
-              "@xl": {
-                width: "14%",
-              },
-            }}
-            offset={76}
-          >
+      <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-[20%_80%]'} min-h-screen`}>
+        {!isMobile && (
+          <div className={`block w-min-33`}>
             <SideBar />
-          </Fixed>
-        </Col>
-        <Col
-          css={{
-            maxWidth: "100%",
-            minHeight: "100%",
-            overflow: "auto",
-            mt: "36px",
-            "@xsMax": {
-              p: 0,
-            },
-            "@xs": {
-              paddingLeft: "0px",
-            },
-            "@sm": {
-              paddingLeft: "24px",
-            },
-            "@xl": {
-              paddingLeft: "36px",
-            },
-          }}
-        >
+          </div>)
+        }
+        <div className={`w-full pb-6 ${isMobile ? 'px-4' : 'px-6'} mt-4`} style={{minHeight: 'calc(100vh - 64px)', overflowY: 'auto'}}>
           {children}
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </main>
   );
 };
 

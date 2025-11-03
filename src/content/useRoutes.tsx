@@ -15,7 +15,7 @@ const RouteConfigurationContext = createContext<RouteConfiguration | undefined>(
 );
 
 export const RouteConfigurationContextProvider = (props: {
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   routeConfigurationId: string;
 }) => {
   const { children, routeConfigurationId } = props;
@@ -43,6 +43,8 @@ export const useRoute = () => {
   const router = useRouter();
 
   const flattenedRoutes = flattenRoutes(routes);
+
+  if (!router.asPath) return undefined;
 
   return flattenedRoutes
     .filter((route) => (route as Page).path)

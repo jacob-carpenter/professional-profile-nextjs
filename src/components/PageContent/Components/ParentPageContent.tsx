@@ -1,4 +1,4 @@
-import { Container, Spacer } from "@nextui-org/react";
+import { Spacer } from "@heroui/react";
 import { memo } from "react";
 import { v4 } from "uuid";
 import { Route } from "../../../models/Route";
@@ -15,14 +15,14 @@ const ParentPageContentComponent = ({
   return (
     <>
       {route?.children.map((child) => (
-        <Container key={v4()}>
+        <div key={v4()} className="w-full">
           <Divider {...child} header={child.title} />
-          <Spacer />
-          <Container fluid css={{ paddingLeft: "16px" }}>
+          <Spacer y={4} />
+          <div className="w-full pl-8">
             <PageContent route={child} />
-          </Container>
-          <Spacer />
-        </Container>
+          </div>
+          <Spacer y={4} />
+        </div>
       ))}
     </>
   );

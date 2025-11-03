@@ -1,4 +1,4 @@
-import { Card } from "@nextui-org/react";
+import { Card } from "@heroui/react";
 import { memo } from "react";
 import { IconType } from "../../models/Route";
 import { CardHeader } from "../Card/CardHeader";

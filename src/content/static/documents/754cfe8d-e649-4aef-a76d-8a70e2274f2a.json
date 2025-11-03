@@ -11,7 +11,6 @@
         "iconPrefix": "fas",
         "iconType": "fontawesome",
         "icon": "mug-saucer",
-        "xs": 12,
         "externalLinks": [
           "https://github.com/jacob-carpenter/professional-profile-nextjs"
         ],
@@ -27,7 +26,6 @@
         "iconPrefix": "fas",
         "iconType": "fontawesome",
         "icon": "briefcase",
-        "xs": 12,
         "externalLinks": [
           "https://github.com/jacob-carpenter/RIP/tree/main/data_extractors"
         ],
@@ -44,7 +42,6 @@
         "iconPrefix": "fas",
         "iconType": "fontawesome",
         "icon": "briefcase",
-        "xs": 12,
         "externalLinks": [
           "https://github.com/jacob-carpenter/RIP/tree/main/old_frienbly_ngx",
           "https://github.com/jacob-carpenter/RIP/tree/main/old_frienbly_web"

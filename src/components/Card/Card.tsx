@@ -1,4 +1,4 @@
-import { Card as NextUICard, Grid } from "@nextui-org/react";
+import { Card as HeroUICard, CardHeader as HeroUICardHeader, CardBody, CardFooter, Divider } from "@heroui/react";
 import { memo } from "react";
 import { CardHeader } from "./CardHeader";
 import { Card as CardType } from "../../models/Document";
@@ -7,46 +7,46 @@ import { v4 } from "uuid";
 
 const CardComponent = (
   props: {
-    children?: JSX.Element | JSX.Element[];
+    children?: React.ReactNode;
   } & CardType
 ) => {
   const { body, children, details } = props;
   return (
     <>
-      <NextUICard>
+      <HeroUICard >
         <CardHeader {...props} />
         {body || children ? (
           <>
-            <NextUICard.Divider />
-            <NextUICard.Body>
+            <Divider />
+            <CardBody>
               <span
                 dangerouslySetInnerHTML={{
                   __html: dompurify.sanitize(body),
                 }}
               />
               {children}
-            </NextUICard.Body>
+            </CardBody>
           </>
         ) : undefined}
         {details?.length ? (
           <>
-            <NextUICard.Divider />
-            <NextUICard.Footer>
-              <Grid.Container>
+            <Divider />
+            <CardFooter>
+              <div className="flex flex-col w-full">
                 {details?.map((eventDetail) => (
-                  <Grid key={v4()} xs={12} css={{ paddingLeft: "24px" }}>
+                  <div key={v4()} className="w-full pl-6">
                     <span
                       dangerouslySetInnerHTML={{
                         __html: dompurify.sanitize(eventDetail),
                       }}
                     />
-                  </Grid>
+                  </div>
                 ))}
-              </Grid.Container>
-            </NextUICard.Footer>
+              </div>
+            </CardFooter>
           </>
         ) : undefined}
-      </NextUICard>
+      </HeroUICard>
     </>
   );
 };

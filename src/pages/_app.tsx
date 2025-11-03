@@ -1,8 +1,11 @@
-import { Container, createTheme, NextUIProvider } from "@nextui-org/react";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
+import { HeroUIProvider } from "@heroui/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { NavBar } from "../components/NavBar/NavBar";
 import { PageContainer } from "../components/PageContainer/PageContainer";
-import { useSSR } from "@nextui-org/react";
 import {
   SiteConfigurationContextProvider,
   useSiteConfiguration,
@@ -18,20 +21,12 @@ import "../content/fontAwesomeInitializer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { flattenRoutes } from "../utils/routeUtilities";
 import { getAllFontAwesomeIconsForRoutes } from "../utils/fontAwesome";
-
-const lightTheme = createTheme({
-  type: "light",
-});
-
-const darkTheme = createTheme({
-  type: "dark",
-  className: "isDark",
-});
+import "../styles/globals.css";
 
 const ApplicationContentComponent = ({
   children,
 }: {
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }) => {
   const {
     siteSettings: { routeConfigurationId },
@@ -57,39 +52,32 @@ const ApplicationContentComponent = ({
 const ApplicationContent = withDefaults(memo(ApplicationContentComponent), {});
 
 const Application = ({ Component, pageProps }) => {
-  const { isBrowser } = useSSR();
   return (
-    isBrowser && (
-      <NextThemesProvider
-        defaultTheme="system"
-        attribute="class"
-        value={{
-          light: lightTheme.className,
-          dark: darkTheme.className,
-        }}
-      >
-        <NextUIProvider>
-          <SiteConfigurationContextProvider
-            // TODO Currently statically defined, but maybe route based for flexing subject of site?
-            siteId={"2f8346a0-9f48-49ac-9317-c671bebd1415"}
-          >
-            <ApplicationContent>
-              <Container
-                css={{
-                  display: "grid",
-                  padding: "0",
-                  margin: "0",
-                  maxWidth: "100%",
-                }}
-              >
-                <NavBar />
-                <PageContainer>{<Component {...pageProps} />}</PageContainer>
-              </Container>
-            </ApplicationContent>
-          </SiteConfigurationContextProvider>
-        </NextUIProvider>
-      </NextThemesProvider>
-    )
+    <NextThemesProvider
+      defaultTheme="system"
+      attribute="class"
+    >
+      <HeroUIProvider>
+        <SiteConfigurationContextProvider
+          // TODO Currently statically defined, but maybe route based for flexing subject of site?
+          siteId={"2f8346a0-9f48-49ac-9317-c671bebd1415"}
+        >
+          <ApplicationContent>
+            <div
+              style={{
+                display: "grid",
+                padding: "0",
+                margin: "0",
+                maxWidth: "100%",
+              }}
+            >
+              <NavBar />
+              <PageContainer>{<Component {...pageProps} />}</PageContainer>
+            </div>
+          </ApplicationContent>
+        </SiteConfigurationContextProvider>
+      </HeroUIProvider>
+    </NextThemesProvider>
   );
 };
 
